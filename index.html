@@ -23,3 +23,20 @@
     </header>
     <main class="container dashboard">
         <div class="row p-2">
+
+            <!-- Right column with current weather and 5 day forecast -->
+            <div class="col-sm-12 col-md-9 order-md-2">
+                <div class="row">
+            
+                    <!-- Current Weather Forecast -->
+                    <div class="col-12 currentWeather p-0">
+                        <div class="d-flex cityName">
+                            <h2 id="city"></h2>
+                            <h3 id="date"></h3>
+                            <img id="weather-icon" />
+                        </div>
+                        <p class="pt-1 pl-2">Temperature: <span id="temperature"></span> &deg;F</p>
+                        <p class="pl-2">Humidity: <span id="humidity"></span>% </p>
+                        <p class="pl-2">Wind Speed: <span id="wind"></span> MPH</p>
+                        <p class="pl-2">UV Index: <span id="uv-index" class="p-1"></span></p>
+                    </div>            
