@@ -149,4 +149,16 @@ $(document).ready(function () {
         });
     }
 
+     // Function to display the last searched city
+     function displayLastSearchedCity() {
+        if (pastCities[0]) {
+            let queryURL = buildURLFromId(pastCities[0].id);
+            searchWeather(queryURL);
+        } else {
+            // if no past searched cities, load Detroit weather data
+            let queryURL = buildURLFromInputs("Detroit");
+            searchWeather(queryURL);
+        }
+    }
+
     
