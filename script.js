@@ -160,5 +160,43 @@ $(document).ready(function () {
             searchWeather(queryURL);
         }
     }
+ 
+    // Click handler for search button
+    $('#search-btn').on('click', function (event) {
+        // Preventing the button from trying to submit the form
+        event.preventDefault();
 
+        // Retrieving and scrubbing the city from the inputs
+        let city = cityInput.val().trim();
+        city = city.replace(' ', '%20');
+
+        // Clear the input fields
+        cityInput.val('');
+
+        // Build the query url with the city and searchWeather
+        if (city) {
+            let queryURL = buildURLFromInputs(city);
+            searchWeather(queryURL);
+        }
+    }); 
     
+    // Click handler for city buttons to load that city's weather
+    $(document).on("click", "button.city-btn", function (event) {
+        let clickedCity = $(this).text();
+        let foundCity = $.grep(pastCities, function (storedCity) {
+            return clickedCity === storedCity.city;
+        })
+        let queryURL = buildURLFromId(foundCity[0].id)
+        searchWeather(queryURL);
+    });
+
+ // Initialization - when page loads
+
+    // load any cities in local storage into array
+    loadCities();
+    displayCities(pastCities);
+
+    // Display weather for last searched city
+    displayLastSearchedCity();
+
+});
