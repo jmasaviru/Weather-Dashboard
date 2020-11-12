@@ -8,6 +8,6 @@ The following image demonstrates the application functionality:
 
 ## Links
 
-* The Weather Dashboard URL:
+* Weather Dashboard URL: (https://jmasaviru.github.io/Weather-Dashboard/
 
-* The Weather Dashboard GitHub repository:
+* Weather Dashboard GitHub repository: (https://github.com/jmasaviru/Weather-Dashboard)
